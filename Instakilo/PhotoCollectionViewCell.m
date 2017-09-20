@@ -8,6 +8,18 @@
 
 #import "PhotoCollectionViewCell.h"
 
+@interface PhotoCollectionViewCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *photoImage;
+
+@end
+
+
 @implementation PhotoCollectionViewCell
+
+-(void)setImage:(PhotoObject*)photo{
+    self.photoImage.image = photo.image;
+}
+
 
 @end

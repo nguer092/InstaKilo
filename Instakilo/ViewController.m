@@ -7,37 +7,49 @@
 //
 
 #import "ViewController.h"
+#import "PhotoObject.h"
 #import "PhotoCollectionViewCell.h"
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic) NSArray* photos;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self createPhoto];
 }
+
+
+-(void)createPhoto{
+    PhotoObject *naruto = [[PhotoObject alloc] initWithName:@"naruto"];
+    PhotoObject *luffy = [[PhotoObject alloc] initWithName:@"luffy"];
+    PhotoObject *gon = [[PhotoObject alloc] initWithName:@"gon"];
+    PhotoObject *eren = [[PhotoObject alloc] initWithName:@"eren"];
+    PhotoObject *edward = [[PhotoObject alloc] initWithName:@"edward"];
+    self.photos = @[naruto, luffy, gon, eren, edward];
+}
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
-    return 2;
+    return 1;
 }
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    
-}
-
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return self.photos.count;
     
 }
 
 
-
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.photo = self.photos[indexPath.row];
+    return cell;
+}
 
 
 @end
