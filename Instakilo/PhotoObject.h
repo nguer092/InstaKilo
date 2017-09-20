@@ -12,5 +12,6 @@
 
 -(instancetype)initWithName:(NSString *)name;
 @property (strong, readonly) UIImage *image;
+@property (strong) NSString* name;
 
 @end

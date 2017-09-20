@@ -13,6 +13,7 @@
 -(instancetype)initWithName:(NSString *)name{
     if (self = [super init]) {
         _image = [UIImage imageNamed:name];
+        _name = name;
     }
     
     return self;

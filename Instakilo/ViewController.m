@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "PhotoObject.h"
 #import "PhotoCollectionViewCell.h"
+#import "CharacterTitleReusableView.h"
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -20,8 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createPhoto];
+    self.title = @"Students";
 }
 
+#pragma mark - Date Source
 
 -(void)createPhoto{
     PhotoObject *naruto = [[PhotoObject alloc] initWithName:@"naruto"];
@@ -29,19 +32,21 @@
     PhotoObject *gon = [[PhotoObject alloc] initWithName:@"gon"];
     PhotoObject *eren = [[PhotoObject alloc] initWithName:@"eren"];
     PhotoObject *edward = [[PhotoObject alloc] initWithName:@"edward"];
-    self.photos = @[naruto, luffy, gon, eren, edward];
+    PhotoObject *kakashi = [[PhotoObject alloc] initWithName:@"kakashi"];
+    PhotoObject *shanks = [[PhotoObject alloc] initWithName:@"shanks"];
+    PhotoObject *oldman = [[PhotoObject alloc] initWithName:@"oldman"];
+    PhotoObject *levi = [[PhotoObject alloc] initWithName:@"levi"];
+    PhotoObject *roy = [[PhotoObject alloc] initWithName:@"roy"];
+    self.photos = @[naruto, luffy, gon, eren, edward, kakashi, shanks, oldman, levi, roy];
 }
 
-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    
-    return 1;
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.photos.count;
-    
 }
 
 
@@ -51,5 +56,19 @@
     return cell;
 }
 
+#pragma mark - Sections
+
+- (PhotoObject *)photoAtIndexPath:(NSIndexPath *)indexPath {
+    return self.photos[indexPath.section];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    CharacterTitleReusableView *view;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Cell" forIndexPath:indexPath];
+        view.photo = [self photoAtIndexPath:indexPath];
+    }
+    return view;
+}
 
 @end

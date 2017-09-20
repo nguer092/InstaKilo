@@ -54,9 +54,36 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FZe-9C-k7g">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="FZe-9C-k7g" customClass="CharacterTitleReusableView">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6D-2d-H1A" customClass="CharacterTitleReusableView">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sd-hP-CHB">
+                                                    <rect key="frame" x="155.5" y="4" width="64" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="7Sd-hP-CHB" firstAttribute="centerY" secondItem="S6D-2d-H1A" secondAttribute="centerY" id="9xH-IK-aKF"/>
+                                                <constraint firstItem="7Sd-hP-CHB" firstAttribute="centerX" secondItem="S6D-2d-H1A" secondAttribute="centerX" id="Nad-zB-wpS"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="S6D-2d-H1A" firstAttribute="top" secondItem="FZe-9C-k7g" secondAttribute="top" id="IpQ-Hx-ZL6"/>
+                                        <constraint firstAttribute="bottom" secondItem="S6D-2d-H1A" secondAttribute="bottom" id="Zbt-hQ-2r5"/>
+                                        <constraint firstItem="S6D-2d-H1A" firstAttribute="leading" secondItem="FZe-9C-k7g" secondAttribute="leading" id="ofN-gG-ltd"/>
+                                        <constraint firstAttribute="trailing" secondItem="S6D-2d-H1A" secondAttribute="trailing" id="sdC-Pt-OI3"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="label" destination="7Sd-hP-CHB" id="8d0-mF-1wa"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="vzF-Z8-gcy"/>
