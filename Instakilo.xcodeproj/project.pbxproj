@@ -58,14 +58,9 @@
 		011138FA1F72F37D002A64DE /* Instakilo */ = {
 			isa = PBXGroup;
 			children = (
-				011138FE1F72F37D002A64DE /* AppDelegate.h */,
-				011138FF1F72F37D002A64DE /* AppDelegate.m */,
 				011139011F72F37D002A64DE /* ViewController.h */,
 				011139021F72F37D002A64DE /* ViewController.m */,
 				011139041F72F37D002A64DE /* Main.storyboard */,
-				011139071F72F37D002A64DE /* Assets.xcassets */,
-				011139091F72F37D002A64DE /* LaunchScreen.storyboard */,
-				0111390C1F72F37D002A64DE /* Info.plist */,
 				011138FB1F72F37D002A64DE /* Supporting Files */,
 			);
 			path = Instakilo;
@@ -74,6 +69,11 @@
 		011138FB1F72F37D002A64DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				011138FE1F72F37D002A64DE /* AppDelegate.h */,
+				011138FF1F72F37D002A64DE /* AppDelegate.m */,
+				011139071F72F37D002A64DE /* Assets.xcassets */,
+				011139091F72F37D002A64DE /* LaunchScreen.storyboard */,
+				0111390C1F72F37D002A64DE /* Info.plist */,
 				011138FC1F72F37D002A64DE /* main.m */,
 			);
 			name = "Supporting Files";
