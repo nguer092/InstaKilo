@@ -13,6 +13,8 @@
 		011139061F72F37D002A64DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011139041F72F37D002A64DE /* Main.storyboard */; };
 		011139081F72F37D002A64DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011139071F72F37D002A64DE /* Assets.xcassets */; };
 		0111390B1F72F37D002A64DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011139091F72F37D002A64DE /* LaunchScreen.storyboard */; };
+		011139141F72FADE002A64DE /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011139131F72FADE002A64DE /* PhotoCollectionViewCell.m */; };
+		011139171F72FEEB002A64DE /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 011139161F72FEEB002A64DE /* PhotoObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		011139071F72F37D002A64DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0111390A1F72F37D002A64DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0111390C1F72F37D002A64DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		011139121F72FADE002A64DE /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		011139131F72FADE002A64DE /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		011139151F72FEEB002A64DE /* PhotoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoObject.h; sourceTree = "<group>"; };
+		011139161F72FEEB002A64DE /* PhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,9 @@
 		011138FA1F72F37D002A64DE /* Instakilo */ = {
 			isa = PBXGroup;
 			children = (
-				011139011F72F37D002A64DE /* ViewController.h */,
-				011139021F72F37D002A64DE /* ViewController.m */,
-				011139041F72F37D002A64DE /* Main.storyboard */,
+				0111391A1F72FF7F002A64DE /* Controller */,
+				011139191F72FF76002A64DE /* View */,
+				011139181F72FF6C002A64DE /* Model */,
 				011138FB1F72F37D002A64DE /* Supporting Files */,
 			);
 			path = Instakilo;
@@ -77,6 +83,34 @@
 				011138FC1F72F37D002A64DE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		011139181F72FF6C002A64DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				011139151F72FEEB002A64DE /* PhotoObject.h */,
+				011139161F72FEEB002A64DE /* PhotoObject.m */,
+				011139121F72FADE002A64DE /* PhotoCollectionViewCell.h */,
+				011139131F72FADE002A64DE /* PhotoCollectionViewCell.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		011139191F72FF76002A64DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				011139041F72F37D002A64DE /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0111391A1F72FF7F002A64DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				011139011F72F37D002A64DE /* ViewController.h */,
+				011139021F72F37D002A64DE /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011139171F72FEEB002A64DE /* PhotoObject.m in Sources */,
 				011139031F72F37D002A64DE /* ViewController.m in Sources */,
+				011139141F72FADE002A64DE /* PhotoCollectionViewCell.m in Sources */,
 				011139001F72F37D002A64DE /* AppDelegate.m in Sources */,
 				011138FD1F72F37D002A64DE /* main.m in Sources */,
 			);
