@@ -11,6 +11,6 @@
 
 @interface PhotoCollectionViewCell : UICollectionViewCell
 
-@property (weak,nonatomic) PhotoObject * photo;
+@property (strong,nonatomic) PhotoObject * photo;
 
 @end

@@ -17,8 +17,9 @@
 
 @implementation PhotoCollectionViewCell
 
--(void)setImage:(PhotoObject*)photo{
+-(void)setPhoto:(PhotoObject*)photo{
     self.photoImage.image = photo.image;
+    _photo = photo;
 }
 
 

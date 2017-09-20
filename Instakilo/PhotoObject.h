@@ -11,6 +11,6 @@
 @interface PhotoObject : NSObject
 
 -(instancetype)initWithName:(NSString *)name;
-@property (weak, readonly) UIImage *image;
+@property (strong, readonly) UIImage *image;
 
 @end
