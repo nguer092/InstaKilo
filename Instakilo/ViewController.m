@@ -10,6 +10,7 @@
 #import "PhotoObject.h"
 #import "PhotoCollectionViewCell.h"
 #import "CharacterTitleReusableView.h"
+#import "DetailViewController.h"
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -22,24 +23,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createPhoto];
-    self.title = @"Students";
 }
 
 #pragma mark - Date Source
 
 -(void)createPhoto{
-    PhotoObject *naruto = [[PhotoObject alloc] initWithName:@"naruto"];
-    PhotoObject *luffy = [[PhotoObject alloc] initWithName:@"luffy"];
-    PhotoObject *gon = [[PhotoObject alloc] initWithName:@"gon"];
-    PhotoObject *eren = [[PhotoObject alloc] initWithName:@"eren"];
-    PhotoObject *edward = [[PhotoObject alloc] initWithName:@"edward"];
-    PhotoObject *kakashi = [[PhotoObject alloc] initWithName:@"kakashi"];
-    PhotoObject *shanks = [[PhotoObject alloc] initWithName:@"shanks"];
-    PhotoObject *oldman = [[PhotoObject alloc] initWithName:@"oldman"];
-    PhotoObject *levi = [[PhotoObject alloc] initWithName:@"levi"];
-    PhotoObject *roy = [[PhotoObject alloc] initWithName:@"roy"];
-    PhotoObject *simon = [[PhotoObject alloc] initWithName:@"simon"];
-    PhotoObject *kamina = [[PhotoObject alloc] initWithName:@"kamina"];
+    PhotoObject *naruto = [[PhotoObject alloc] initWithName:@"Naruto Uzumaki"];
+    PhotoObject *luffy = [[PhotoObject alloc] initWithName:@"Monkey D. Luffy"];
+    PhotoObject *gon = [[PhotoObject alloc] initWithName:@"Gon Freecs"];
+    PhotoObject *eren = [[PhotoObject alloc] initWithName:@"Eren Yeager"];
+    PhotoObject *edward = [[PhotoObject alloc] initWithName:@"Edward Elric"];
+    PhotoObject *kakashi = [[PhotoObject alloc] initWithName:@"Kakashi Hatake"];
+    PhotoObject *shanks = [[PhotoObject alloc] initWithName:@"Red-Haired Shanks"];
+    PhotoObject *oldman = [[PhotoObject alloc] initWithName:@"Isaac Netero"];
+    PhotoObject *levi = [[PhotoObject alloc] initWithName:@"Captain Levi Ackerman"];
+    PhotoObject *roy = [[PhotoObject alloc] initWithName:@"Lt. Roy Mustang"];
+    PhotoObject *simon = [[PhotoObject alloc] initWithName:@"Simon"];
+    PhotoObject *kamina = [[PhotoObject alloc] initWithName:@"Kamina"];
     self.photos = @[naruto, luffy, gon, eren, edward, simon];
     self.masterPhotos = @[kakashi, shanks, oldman, levi, roy, kamina];
 
@@ -57,10 +57,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    if (indexPath.section == 0){
-        cell.photo = self.photos[indexPath.row];}
-    else if (indexPath.section == 1){
-        cell.photo = self.masterPhotos[indexPath.row];}
+    if (indexPath.section == 0)
+        cell.photo = self.photos[indexPath.row];
+    else if (indexPath.section == 1)
+        cell.photo = self.masterPhotos[indexPath.row];
     
     return cell;
 }
@@ -84,6 +84,17 @@
         view.label.text = header;
     }
     return view;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DetailViewController * dvc = segue.destinationViewController;
+    NSIndexPath *path = [self.collectionView indexPathForCell:(UICollectionViewCell*)sender];
+    if (path.section == 0) {
+         dvc.photo = self.photos[path.row];
+    } else {
+        dvc.photo = self.masterPhotos[path.row];
+    }
+   
 }
 
 @end

@@ -16,6 +16,7 @@
 		011139141F72FADE002A64DE /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011139131F72FADE002A64DE /* PhotoCollectionViewCell.m */; };
 		011139171F72FEEB002A64DE /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 011139161F72FEEB002A64DE /* PhotoObject.m */; };
 		0111394F1F732D60002A64DE /* CharacterTitleReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0111394E1F732D60002A64DE /* CharacterTitleReusableView.m */; };
+		015215AC1F741FF0001E009B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015215AB1F741FF0001E009B /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		011139161F72FEEB002A64DE /* PhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoObject.m; sourceTree = "<group>"; };
 		0111394D1F732D60002A64DE /* CharacterTitleReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterTitleReusableView.h; sourceTree = "<group>"; };
 		0111394E1F732D60002A64DE /* CharacterTitleReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterTitleReusableView.m; sourceTree = "<group>"; };
+		015215AA1F741FF0001E009B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		015215AB1F741FF0001E009B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				011139041F72F37D002A64DE /* Main.storyboard */,
+				015215AA1F741FF0001E009B /* DetailViewController.h */,
+				015215AB1F741FF0001E009B /* DetailViewController.m */,
 				0111394D1F732D60002A64DE /* CharacterTitleReusableView.h */,
 				0111394E1F732D60002A64DE /* CharacterTitleReusableView.m */,
 			);
@@ -195,6 +200,7 @@
 				011139141F72FADE002A64DE /* PhotoCollectionViewCell.m in Sources */,
 				011139001F72F37D002A64DE /* AppDelegate.m in Sources */,
 				011138FD1F72F37D002A64DE /* main.m in Sources */,
+				015215AC1F741FF0001E009B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +359,7 @@
 				011139111F72F37D002A64DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
