@@ -11,9 +11,5 @@
 
 @implementation CharacterTitleReusableView
 
-- (void)setPhotoObject:(PhotoObject *)photo {
-    self.label.text = photo.name ;
-    _photo = photo;
-}
 
 @end

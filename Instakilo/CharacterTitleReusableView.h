@@ -11,5 +11,4 @@
 
 @interface CharacterTitleReusableView : UICollectionReusableView
 @property (weak, nonatomic) IBOutlet UILabel *label;
-@property(nonatomic) PhotoObject * photo;
 @end

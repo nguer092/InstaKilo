@@ -14,6 +14,7 @@
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) NSArray* photos;
+@property (nonatomic) NSArray* masterPhotos;
 @end
 
 @implementation ViewController
@@ -37,7 +38,8 @@
     PhotoObject *oldman = [[PhotoObject alloc] initWithName:@"oldman"];
     PhotoObject *levi = [[PhotoObject alloc] initWithName:@"levi"];
     PhotoObject *roy = [[PhotoObject alloc] initWithName:@"roy"];
-    self.photos = @[naruto, luffy, gon, eren, edward, kakashi, shanks, oldman, levi, roy];
+    self.photos = @[naruto, luffy, gon, eren, edward];
+    self.masterPhotos = @[kakashi, shanks, oldman, levi, roy];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -52,7 +54,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    if(indexPath.section == 0)
     cell.photo = self.photos[indexPath.row];
+    else if (indexPath.section == 1)
+        cell.photo = self.masterPhotos[indexPath.row];
     return cell;
 }
 
@@ -66,7 +71,13 @@
     CharacterTitleReusableView *view;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Cell" forIndexPath:indexPath];
-        view.photo = [self photoAtIndexPath:indexPath];
+        NSString *header = @"";
+        if (indexPath.section == 0) {
+            header = @"Students";
+        } else {
+            header = @"Sensei";
+        }
+        view.label.text = header;
     }
     return view;
 }
