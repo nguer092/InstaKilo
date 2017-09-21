@@ -13,5 +13,7 @@
 -(instancetype)initWithName:(NSString *)name;
 @property (strong) UIImage *image;
 @property (strong) NSString* name;
+@property (strong) NSString *age;
+@property (strong) NSString *background;
 
 @end

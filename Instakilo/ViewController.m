@@ -86,6 +86,8 @@
     return view;
 }
 
+#pragma mark - Segue to Detail View Controller
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     DetailViewController * dvc = segue.destinationViewController;
     NSIndexPath *path = [self.collectionView indexPathForCell:(UICollectionViewCell*)sender];
